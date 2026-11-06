@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SpendWise - a student expense tracker to manage expenses and budgets.">
+  <title>SpendWise – Student Expense Tracker</title>
+  <!-- CSS will be linked here later -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1 class="brand-name">SpendWise</h1>
+        <p class="brand-tagline">Student Expense Tracker</p>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link nav-link-active" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#transactions">Transactions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analytics">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#budgets">Budgets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+
+      <!-- ========== DASHBOARD PAGE ========== -->
+      <section class="page page-dashboard" id="dashboard">
+        <header class="page-header">
+          <h2 class="page-title">Dashboard</h2>
+          <p class="welcome-message">Welcome back, <span class="user-name">Student</span>! Here is your spending overview for <span class="current-month">November 2026</span>.</p>
+        </header>
+
+        <!-- Summary cards -->
+        <section class="summary-cards" aria-label="Budget summary">
+          <article class="summary-card card-budget">
+            <h3 class="summary-card-title">Total Monthly Budget</h3>
+            <p class="summary-card-value">₹0.00</p>
+          </article>
+
+          <article class="summary-card card-spent">
+            <h3 class="summary-card-title">Total Amount Spent</h3>
+            <p class="summary-card-value">₹0.00</p>
+          </article>
+
+          <article class="summary-card card-remaining">
+            <h3 class="summary-card-title">Remaining Balance</h3>
+            <p class="summary-card-value">₹0.00</p>
+          </article>
+        </section>
+
+        <!-- Budget progress -->
+        <section class="budget-progress" aria-label="Budget progress">
+          <h3 class="section-title">Budget Progress</h3>
+          <progress class="budget-progress-bar" value="0" max="100">0%</progress>
+          <p class="budget-progress-text"><span class="budget-progress-percent">0%</span> of your monthly budget used</p>
+        </section>
+
+        <!-- Monthly expense chart -->
+        <section class="chart-section" aria-label="Monthly expense chart">
+          <h3 class="section-title">Monthly Expenses</h3>
+          <div class="chart-placeholder monthly-expense-chart">
+            <p class="chart-placeholder-text">Monthly expense chart will appear here</p>
+          </div>
+        </section>
+
+        <!-- Category breakdown -->
+        <section class="category-breakdown" aria-label="Expense category breakdown">
+          <h3 class="section-title">Expense Category Breakdown</h3>
+          <ul class="category-breakdown-list">
+            <li class="category-breakdown-item">
+              <span class="category-name">Food</span>
+              <span class="category-amount">₹0.00</span>
+            </li>
+            <li class="category-breakdown-item">
+              <span class="category-name">Transport</span>
+              <span class="category-amount">₹0.00</span>
+            </li>
+            <li class="category-breakdown-item">
+              <span class="category-name">Books &amp; Supplies</span>
+              <span class="category-amount">₹0.00</span>
+            </li>
+            <li class="category-breakdown-item">
+              <span class="category-name">Entertainment</span>
+              <span class="category-amount">₹0.00</span>
+            </li>
+            <li class="category-breakdown-item">
+              <span class="category-name">Others</span>
+              <span class="category-amount">₹0.00</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Recent transactions -->
+        <section class="recent-transactions" aria-label="Recent transactions">
+          <h3 class="section-title">Recent Transactions</h3>
+          <table class="data-table recent-transactions-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Payment Method</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>06 Nov 2026</td>
+                <td>Sample: Canteen lunch</td>
+                <td>Food</td>
+                <td>UPI</td>
+                <td>₹0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="link-view-all" href="#transactions">View all transactions</a>
+        </section>
+      </section>
+
+      <!-- ========== TRANSACTIONS PAGE ========== -->
+      <section class="page page-transactions" id="transactions">
+        <header class="page-header">
+          <h2 class="page-title">Transactions</h2>
+          <button class="btn btn-primary btn-add-expense" type="button">+ Add Expense</button>
+        </header>
+
+        <!-- Add expense form -->
+        <section class="add-expense" aria-label="Add expense">
+          <h3 class="section-title">Add New Expense</h3>
+          <form class="expense-form" action="#" method="post">
+
+            <div class="form-group">
+              <label class="form-label" for="expense-amount">Amount (₹)</label>
+              <input class="form-input" type="number" id="expense-amount" name="amount" min="0" step="0.01" placeholder="0.00" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="expense-category">Category</label>
+              <select class="form-select" id="expense-category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="books">Books &amp; Supplies</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="rent">Rent &amp; Hostel</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="expense-date">Date</label>
+              <input class="form-input" type="date" id="expense-date" name="date" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="expense-payment-method">Payment Method</label>
+              <select class="form-select" id="expense-payment-method" name="payment_method" required>
+                <option value="">Select payment method</option>
+                <option value="cash">Cash</option>
+                <option value="upi">UPI</option>
+                <option value="debit-card">Debit Card</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="net-banking">Net Banking</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Save Expense</button>
+              <button class="btn btn-secondary" type="reset">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Transactions list -->
+        <section class="transactions-list" aria-label="All transactions">
+          <h3 class="section-title">All Transactions</h3>
+          <table class="data-table transactions-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Payment Method</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>06 Nov 2026</td>
+                <td>Food</td>
+                <td>UPI</td>
+                <td>₹0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <!-- ========== ANALYTICS PAGE ========== -->
+      <section class="page page-analytics" id="analytics">
+        <header class="page-header">
+          <h2 class="page-title">Analytics</h2>
+        </header>
+
+        <section class="report report-monthly" aria-label="Monthly report">
+          <h3 class="section-title">Monthly Report</h3>
+          <div class="chart-placeholder monthly-report-chart">
+            <p class="chart-placeholder-text">Monthly report chart will appear here</p>
+          </div>
+        </section>
+
+        <section class="report report-yearly" aria-label="Yearly report">
+          <h3 class="section-title">Yearly Report</h3>
+          <div class="chart-placeholder yearly-report-chart">
+            <p class="chart-placeholder-text">Yearly report chart will appear here</p>
+          </div>
+        </section>
+
+        <section class="report report-trends" aria-label="Spending trends">
+          <h3 class="section-title">Spending Trends</h3>
+          <div class="chart-placeholder spending-trends-chart">
+            <p class="chart-placeholder-text">Spending trends chart will appear here</p>
+          </div>
+        </section>
+      </section>
+
+      <!-- ========== BUDGETS PAGE ========== -->
+      <section class="page page-budgets" id="budgets">
+        <header class="page-header">
+          <h2 class="page-title">Budgets</h2>
+        </header>
+
+        <!-- Monthly budget -->
+        <section class="monthly-budget" aria-label="Set monthly budget">
+          <h3 class="section-title">Set Monthly Budget</h3>
+          <form class="budget-form" action="#" method="post">
+            <div class="form-group">
+              <label class="form-label" for="monthly-budget-amount">Monthly Budget (₹)</label>
+              <input class="form-input" type="number" id="monthly-budget-amount" name="monthly_budget" min="0" step="0.01" placeholder="0.00" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Save Monthly Budget</button>
+          </form>
+        </section>
+
+        <!-- Category-wise limits -->
+        <section class="category-limits" aria-label="Set category-wise limits">
+          <h3 class="section-title">Set Category-wise Limits</h3>
+          <form class="category-limits-form" action="#" method="post">
+
+            <div class="form-group">
+              <label class="form-label" for="limit-food">Food (₹)</label>
+              <input class="form-input" type="number" id="limit-food" name="limit_food" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limit-transport">Transport (₹)</label>
+              <input class="form-input" type="number" id="limit-transport" name="limit_transport" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limit-books">Books &amp; Supplies (₹)</label>
+              <input class="form-input" type="number" id="limit-books" name="limit_books" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limit-entertainment">Entertainment (₹)</label>
+              <input class="form-input" type="number" id="limit-entertainment" name="limit_entertainment" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limit-rent">Rent &amp; Hostel (₹)</label>
+              <input class="form-input" type="number" id="limit-rent" name="limit_rent" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="limit-others">Others (₹)</label>
+              <input class="form-input" type="number" id="limit-others" name="limit_others" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Save Category Limits</button>
+          </form>
+        </section>
+      </section>
+
+      <!-- ========== CATEGORIES PAGE ========== -->
+      <section class="page page-categories" id="categories">
+        <header class="page-header">
+          <h2 class="page-title">Categories</h2>
+        </header>
+        <p class="page-placeholder">Category management will be added here.</p>
+      </section>
+
+      <!-- ========== SETTINGS PAGE ========== -->
+      <section class="page page-settings" id="settings">
+        <header class="page-header">
+          <h2 class="page-title">Settings</h2>
+        </header>
+        <p class="page-placeholder">Settings options will be added here.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JavaScript will be linked here later -->
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
